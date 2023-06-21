@@ -23,8 +23,5 @@ const images = [
 
 const galeryContainer = document.querySelector('.gallery');
 galeryContainer.style = "display:flex";
-const galeryItem = document.createElement('li');
-const galery = images.map(image =>   
-    galeryItem.innerHTML=`<img style = "max-width: 200px" src = "${image.url}" alt = "${image.alt}">`
-)
+const galery = images.map(image => `<li><img style = "max-width: 200px" src = "${image.url}" alt = "${image.alt}"></li>`)
 galeryContainer.insertAdjacentHTML("afterbegin", galery.join(''));
