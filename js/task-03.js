@@ -23,14 +23,8 @@ const images = [
 
 const galeryContainer = document.querySelector('.gallery');
 galeryContainer.style = "display:flex";
-console.log(galeryContainer);
-const galery = images.map(image => {
-  const galeryItem = document.createElement('li');   
-  const textInLi = `<img style = "max-width: 200px" src = "${image.url}" alt = "${image.alt}">`
-  //galeryItem.innerHTML = textInLi;  
-  galeryItem.insertAdjacentHTML("afterbegin", textInLi);
-  console.log(galeryItem);
-  return(galeryItem);
-})
-
-galeryContainer.append(...galery);
+const galeryItem = document.createElement('li');
+const galery = images.map(image =>   
+    galeryItem.innerHTML=`<img style = "max-width: 200px" src = "${image.url}" alt = "${image.alt}">`
+)
+galeryContainer.insertAdjacentHTML("afterbegin", galery.join(''));
